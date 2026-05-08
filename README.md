@@ -2,10 +2,12 @@
 
 Dispatcher-focused Next.js 14 App Router app for route planning, fleet operations, exception management, and assignment workflows.
 
-The product now has two primary surfaces:
+The product now has three primary surfaces:
 
 - `/` keeps the existing map and route-planning workflow intact.
 - `/reports` is the dispatcher HQ dashboard with KPI filtering, urgent actions, smart to-do, fleet map preview, trip/load/driver drill-downs, route comparison, detention handling, safety/compliance, and docs/billing reconciliation.
+- `/growth` is the marketplace growth layer for driver onboarding, AI-scored load discovery, booking conversion, partner-signal health, PM Copilot synthesis, and experiment planning.
+- `/partner-portal` demonstrates the post-contract NavPro partner lifecycle across contract generation, payout setup, demo account provisioning, referral attribution, payout calculation, partner dashboard, and internal admin monitoring.
 
 `/copilot` no longer exists as a standalone product surface. It now redirects to `/reports`, and the useful CoPilot logic has been folded into the new operations dashboard.
 
@@ -68,6 +70,26 @@ The main dispatch workflow is:
 7. Assigning a driver writes the result back to the shared demo state and returns the dispatcher to an immediately updated Reports dashboard.
 
 This keeps a single route-planning product instead of creating a second planner inside Reports.
+
+## Marketplace Growth Layer
+
+The `/growth` route reframes the Dispatcher OS for the AI-Native Product Management Intern role. It adds a product-growth view across driver onboarding, AI-scored load discovery, booking conversion, marketplace integration signals, and activation -> conversion -> retention experiments.
+
+This layer is demo-first and uses seeded data. The LoadPilot scoring engine is deterministic, while AI is used only for explainability and PM workflow acceleration. Gemini is optional; when no API key is configured, the PM Copilot uses a deterministic fallback so the demo remains fully usable without live APIs, database migrations, auth, or new environment variables.
+
+Recommended demo path:
+
+1. Open `/growth`.
+2. Adjust the onboarding profile to show how preferences affect load ranking.
+3. Select a load and review the LoadPilot explanation, positive signals, and risks.
+4. Save the load and request booking to simulate conversion.
+5. Review the booking funnel, marketplace integrations, PM Copilot output, and experiment backlog.
+
+## Partner Portal UX Flow
+
+The `/partner-portal` route demonstrates a post-contract NavPro partner lifecycle for a GTM Engineering interview case. The flow breaks the seven required portal responsibilities into separate screens: contract generation, Stripe Connect payout setup, NavPro demo account provisioning, referral attribution, payout calculation, partner dashboard, and internal admin monitoring.
+
+This is UX-first and demo-first. All data is mocked. No live DocuSign, Stripe, HubSpot, or NavPro API integration is required. The global `Partners` tab first opens `/partner-portal/partners`, where agreed Acme terms are saved before the post-contract lifecycle begins.
 
 ## Schema and Seed Data
 

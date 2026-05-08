@@ -3,7 +3,7 @@ import { expect, test } from "@playwright/test";
 test("dispatcher can move from Reports into the Map assignment workflow", async ({ page }) => {
   await page.goto("/reports");
 
-  await expect(page.getByRole("heading", { name: "Trucky's smart to-do board" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Axle AI insights & smart to-do board" })).toBeVisible();
 
   await page.getByRole("button", { name: "Assign Patel" }).click();
 

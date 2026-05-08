@@ -12,11 +12,14 @@ import {
   HelpCircle,
   ListTodo,
   LayoutDashboard,
+  Sparkles,
 } from "lucide-react";
 
 const items = [
   { icon: MapIcon, label: "Map", href: "/" },
   { icon: LayoutDashboard, label: "Reports", href: "/reports" },
+  { icon: Sparkles, label: "Growth", href: "/growth" },
+  { icon: Users, label: "Partners", href: "/partner-portal/partners" },
   { icon: Users, label: "Drivers" },
   { icon: Truck, label: "Vehicles" },
   { icon: ListTodo, label: "Trips" },
